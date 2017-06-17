@@ -8,7 +8,7 @@ class Rsvp < ApplicationRecord
              :foreign_key => 'referred_by_user_id',
              :optional    => true
 
-  validate :valid_referral_code, if: :referral_code
+  validate :ensure_valid_referral_code, if: :referral_code
   before_create :set_referred_by_user, if: :referral_code
 
 
