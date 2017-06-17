@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617034926) do
+ActiveRecord::Schema.define(version: 20170617185933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170617034926) do
   create_table "rsvps", force: :cascade do |t|
     t.integer "user_id"
     t.integer "hackathon_id"
+    t.integer "referred_by_user_id"
     t.index ["hackathon_id"], name: "index_rsvps_on_hackathon_id", using: :btree
     t.index ["user_id"], name: "index_rsvps_on_user_id", using: :btree
   end
