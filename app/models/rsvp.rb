@@ -10,9 +10,8 @@ class Rsvp < ApplicationRecord
              :foreign_key => 'referred_by_user_id',
              :optional    => true
 
-  validate :ensure_valid_referral_code, if: :referral_code
-  before_create :set_referred_by_user, if: :referral_code
-
+  validate :ensure_valid_referral_code, if: :referral_present?
+  before_create :set_referred_by_user, if: :referral_present?
 
   private
 
@@ -22,6 +21,10 @@ class Rsvp < ApplicationRecord
     elsif !referral_exists?
       errors.add(:referral_code, 'Invalid referral code.')
     end
+  end
+
+  def referral_present?
+    !referral_code.blank?
   end
 
   def referral_exists?

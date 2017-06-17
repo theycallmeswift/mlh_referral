@@ -6,13 +6,13 @@ class HackathonsController < ApplicationController
   end
 
   def show
-    @hackathon = Hackathon.find(params[:id])
+    @hackathon = Hackathon.includes(:attendees).find(params[:id])
   end
 
   private
 
   def set_rsvp
     @rsvp =
-      Rsvp.where("user_id = ? AND hackathon_id = ?", User.last.id, params[:id]).first
+      Rsvp.where("user_id = ? AND hackathon_id = ?", current_user, params[:id]).first
   end
 end

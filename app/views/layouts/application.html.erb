@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= image_tag "logo.svg" %>
     <% if current_user %>
       <p> Hi <%= current_user.email %> </p>
       <%= button_to "Logout", destroy_user_session_path, method: :delete %>

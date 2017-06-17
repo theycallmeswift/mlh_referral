@@ -8,3 +8,7 @@
 <% else %>
   <%= render partial: "rsvps/new", locals: { hackathon_id: @hackathon.id} %>
 <% end %>
+
+<% if @hackathon.attendees.any? %>
+  <%= render partial: "attendees", locals: { attendees: @hackathon.attendees } %>
+<% end %>
