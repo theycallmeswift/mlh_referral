@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable
 
+  has_many :rsvps
+
   before_create :set_referral_code
 
   private

@@ -1,23 +1,9 @@
 class Hackathon < ApplicationRecord
+  has_many :rsvps
+  has_many :attendees, through: :rsvps, source: :user
 end
 
-# raf [10:03 PM] 
-# user->
-# id
-# email
-#
-# hackathon->
-# id
-# title
-# description
-# starts_at
-# ends_at
-#
-# rsvp->
-# id
-# hackathon_id
-# user_id
-#
+
 # referral ->
 # id
 # subject_type
