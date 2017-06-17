@@ -4,6 +4,8 @@ class RsvpsController < ApplicationController
 
     if rsvp.save
       redirect_to hackathon_path(rsvp.hackathon_id)
+    else
+      fail
     end
   end
 
@@ -19,9 +21,5 @@ class RsvpsController < ApplicationController
 
   def create_params
     params.require(:rsvp).permit(:hackathon_id, :referral_code)
-  end
-
-  def current_user
-    User.last
   end
 end
