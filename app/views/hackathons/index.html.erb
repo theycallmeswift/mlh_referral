@@ -1,4 +1,3 @@
 <% @hackathons.each do |hackathon| %>
-  <h1><%= hackathon.title %></h1>
-  <p><%= hackathon.description %></p>
+  <h1><%= link_to hackathon.title, hackathon_path(hackathon) %></h1>
 <% end %>

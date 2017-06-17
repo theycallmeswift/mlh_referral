@@ -1,1 +1,10 @@
 <h1><%= @hackathon.title %></h1>
+<p><%= @hackathon.description %></p>
+<%= @hackathon.starts_at %>
+<%= @hackathon.ends_at %>
+
+<% if @rsvp %>
+  <%= render partial: "rsvps/edit", locals: { rsvp: @rsvp } %>
+<% else %>
+  <%= render partial: "rsvps/new", locals: { hackathon_id: @hackathon.id} %>
+<% end %>

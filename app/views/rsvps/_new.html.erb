@@ -1,0 +1,5 @@
+<%= form_for :rsvp, url: rsvps_path do |f| %>
+  <%= f.hidden_field :hackathon_id, value: hackathon_id %>
+  <%= f.text_field :referral_code %>
+  <%= f.submit %>
+<% end %>

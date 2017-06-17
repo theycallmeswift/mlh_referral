@@ -9,7 +9,7 @@ class User < ApplicationRecord
   private
 
   def generate_referral_code
-    Digest::SHA1.hexdigest([ id, Time.now ].join)[0..5].upcase
+    Digest::SHA1.hexdigest([ id, Time.now ].join)[0..5]
   end
 
   def set_referral_code
