@@ -1,24 +1,25 @@
-# README
+###### LIVE APP
+https://mlhacking.herokuapp.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###### LOCAL SETUP
+1. Run the following commands in order to get the application running locally:
+```
+git clone https://github.com/rafthedeveloper/mlh_referral.git
+```
 
-Things you may want to cover:
+2. Navigate to project folder and bundle gems
+```
+bundle install
+```
 
-* Ruby version
+3. Create the database (uses PostgreSQL)
+```
+bundle exec rake db:create
+```
 
-* System dependencies
+4. Run rails server
+```
+bundle exec rails s
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. Visit localhost:3000
