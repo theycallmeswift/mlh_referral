@@ -1,9 +1,10 @@
 .hackathon_cover_img {
-  width: 100%;
+  max-width: 300px;
   display:block;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
+
 .hackathon_details{
   &--item {
     margin-bottom: 40px;

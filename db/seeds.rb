@@ -63,3 +63,6 @@ h4 = Hackathon.create(
 
 Rsvp.create(hackathon: h1, attendee: u2, referred_by: u1)
 Rsvp.create(hackathon: h1, attendee: u3, referred_by: u1)
+Rsvp.create(hackathon: h1, attendee: u4, referred_by: u1)
+Rsvp.create(hackathon: h1, attendee: u5, referred_by: u1)
+Rsvp.create(hackathon: h1, attendee: u6, referred_by: u1)

@@ -11,8 +11,8 @@
     <hr />
 
     <% if @referred_users.any? %>
-      <% render partial: "referred_users_table", locals: { referred_users: @referred_users} %>
-    
+      <%= render partial: "referred_users_table", locals: { referred_users: @referred_users} %>
+
     <% else %>
       <p> Looks like you haven't referred anyone yet!
     <% end %>

@@ -7,6 +7,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
