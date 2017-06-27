@@ -2,9 +2,9 @@
 https://mlhacking.herokuapp.com
 
 ###### LOCAL SETUP
-1. Clone the repository
+1. Run the following commands in order to get the application running locally:
 ```
-git clone 
+git clone https://github.com/rafthedeveloper/mlh_referral.git
 ```
 
 2. Navigate to project folder and bundle gems
@@ -21,3 +21,5 @@ bundle exec rake db:create
 ```
 bundle exec rails s
 ```
+
+5. Visit localhost:3000
