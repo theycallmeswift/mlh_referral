@@ -5,7 +5,8 @@ class RsvpsController < ApplicationController
     if rsvp.save
       redirect_to hackathon_path(rsvp.hackathon_id)
     else
-      fail
+      redirect_to hackathon_path(rsvp.hackathon_id),
+        :flash => { :error => rsvp.errors.messages }
     end
   end
 

@@ -1,3 +1,10 @@
-<% @hackathons.each do |hackathon| %>
-  <h1><%= link_to hackathon.title, hackathon_path(hackathon) %></h1>
-<% end %>
+<div class="row">
+  <h1>Upcoming Hackathons</h1>
+
+  <% @hackathons.each do |hackathon| %>
+    <div class="hackthon--block col-sm-4">
+      <a href="<%= hackathon_path(hackathon) %>">
+        <img class="hackathon_cover_img" src="<%= hackathon.cover_image_url %>" />
+    </div>
+  <% end %>
+</div>

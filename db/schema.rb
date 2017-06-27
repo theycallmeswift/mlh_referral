@@ -10,24 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617193347) do
+ActiveRecord::Schema.define(version: 20170627021736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "hackathons", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.text     "description", null: false
-    t.datetime "starts_at",   null: false
-    t.datetime "ends_at",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "title",           null: false
+    t.text     "description",     null: false
+    t.datetime "starts_at",       null: false
+    t.datetime "ends_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "cover_image_url"
   end
 
   create_table "rsvps", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "hackathon_id"
-    t.integer "referred_by_user_id"
+    t.integer  "user_id"
+    t.integer  "hackathon_id"
+    t.integer  "referred_by_user_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.index ["hackathon_id"], name: "index_rsvps_on_hackathon_id", using: :btree
     t.index ["user_id"], name: "index_rsvps_on_user_id", using: :btree
   end

@@ -1,0 +1,35 @@
+header {
+  height: 80px;
+  background-color: #FFF;
+  box-shadow: 0px 3px 4px #E1E1E1;
+}
+
+.logo {
+  margin-top:15px;
+}
+
+nav {
+  ul {
+    float: right;
+    li {
+      line-height: 80px;
+      display: inline-block;
+      margin-left: 20px;
+
+      a {
+        &:link {
+          color: #353535;
+        }
+        &:visited {
+          color: #353535;
+        }
+        &:hover {
+
+        }
+        &:active {
+
+        }
+      }
+    }
+  }
+}

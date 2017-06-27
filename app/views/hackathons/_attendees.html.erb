@@ -1,4 +1,8 @@
-<p> <%= attendees.size %> hackers attending </p>
-<% attendees.each do |attendee| %>
-  <p> <%= attendee.email %> </p>
+<% if attendees.any? %>
+  <!-- <p> <%= attendees.size %> hackers attending </p> -->
+  <% attendees.each do |attendee| %>
+  <%= fa_icon "user-circle", class: "fa-2x" %>
+  <% end %>
+<% else %>
+  <p> No current registrants for this event. You could be the first! </p>
 <% end %>

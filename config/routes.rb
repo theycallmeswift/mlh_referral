@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :hackathons, only: [:index, :show]
   resources :rsvps, only: [:create, :destroy]
+
+  get '/account' => 'users#account', as: :account
 end

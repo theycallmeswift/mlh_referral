@@ -1,14 +1,52 @@
-<h1><%= @hackathon.title %></h1>
-<p><%= @hackathon.description %></p>
-<%= @hackathon.starts_at %>
-<%= @hackathon.ends_at %>
+<div class="row">
 
-<% if @rsvp %>
-  <%= render partial: "rsvps/edit", locals: { rsvp: @rsvp } %>
-<% else %>
-  <%= render partial: "rsvps/new", locals: { hackathon_id: @hackathon.id} %>
-<% end %>
+  <% if flash[:error] %>
+  <% end %>
 
-<% if @hackathon.attendees.any? %>
-  <%= render partial: "attendees", locals: { attendees: @hackathon.attendees } %>
-<% end %>
+  <div class="col-sm-2"></div>
+
+  <div class="col-sm-6">
+    <h2><%= @hackathon.title %></h2>
+    <hr />
+    <p><%= @hackathon.description %></p>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="hackathon_details--item">
+      <h3>rsvp</h3>
+      <hr />
+      <% if current_user %>
+        <% if @rsvp %>
+          <%= render partial: "rsvps/edit", locals: { rsvp: @rsvp } %>
+        <% else %>
+          <%= render partial: "rsvps/new", locals: { hackathon_id: @hackathon.id} %>
+        <% end %>
+      <% else %>
+        <p>You must be a registered user in order to rsvp for an event.</p>
+      <% end %>
+    </div>
+
+    <% if current_user %>
+      <div class="hackathon_details--item">
+        <h3>referrals</h3>
+        <hr />
+        <p>
+          Refer a friend and earn rewards for future events, with the following
+          referral code: <strong><%= current_user.referral_code %></strong>.
+        </p>
+      </div>
+    <% end %>
+
+    <div class="hackathon_details--item">
+      <h3>attendees</h3>
+      <hr />
+      <% if @hackathon.attendees.any? %>
+        <%= render partial: "attendees", locals: { attendees: @hackathon.attendees } %>
+      <% else %>
+        <p> No attendees yet, be the first!
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-sm-2"></div>
+</div>

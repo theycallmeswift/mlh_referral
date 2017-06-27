@@ -1,5 +1,6 @@
 <%= form_for :rsvp, url: rsvps_path do |f| %>
   <%= f.hidden_field :hackathon_id, value: hackathon_id %>
-  <%= f.text_field :referral_code %>
-  <%= f.submit %>
+  <%= f.label :referral_code, "Have a referral code?", class: "control-label" %>
+  <%= f.text_field :referral_code, value: params[:referral_code], class: "form-control" %>
+  <%= f.submit "RSVP", class: "btn btn-success" %>
 <% end %>

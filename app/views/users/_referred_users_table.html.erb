@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Event </th>
+      <th> User </th>
+      <th> Referred on </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% referred_users.each do |r| %>
+      <tr>
+        <td> <%= r.hackathon.title %> </td>
+        <td> <%= r.attendee.email  %> </td>
+        <td> <%= r.created_at %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

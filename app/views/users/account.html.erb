@@ -1,0 +1,22 @@
+<div class="row">
+  <h1>My Account</h1>
+
+  <div class="col-sm-3"></div>
+
+  <div class="col-sm-6">
+    <p>
+      Refer a friend and earn rewards for future events, with the following
+      referral code: <strong><%= current_user.referral_code %></strong>.
+    </p>
+    <hr />
+
+    <% if @referred_users.any? %>
+      <% render partial: "referred_users_table", locals: { referred_users: @referred_users} %>
+    
+    <% else %>
+      <p> Looks like you haven't referred anyone yet!
+    <% end %>
+  </div>
+
+  <div class="col-sm-3"></div>
+</div>

@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :trackable
+  devise :database_authenticatable, :registerable
 
   has_many :rsvps
 
