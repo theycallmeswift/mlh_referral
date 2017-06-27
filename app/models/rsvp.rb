@@ -17,9 +17,9 @@ class Rsvp < ApplicationRecord
 
   def ensure_valid_referral_code
     if self_referral?
-      errors.add(:referral_code, 'You cannot refer yourself for a hackathon.')
+      errors.add(:referral_code, 'cannot be your own.')
     elsif !referral_exists?
-      errors.add(:referral_code, 'Invalid referral code.')
+      errors.add(:referral_code, 'is invalid, please verify and try again.')
     end
   end
 

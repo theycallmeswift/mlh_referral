@@ -1,11 +1,17 @@
 <div class="row">
 
-  <% if flash[:error] %>
-  <% end %>
+
 
   <div class="col-sm-2"></div>
 
   <div class="col-sm-6">
+    <% if flash[:error] %>
+    <div class="alert alert-danger alert-dismissable">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <%= flash[:error] %>
+    </div>
+
+    <% end %>
     <h2><%= @hackathon.title %></h2>
     <hr />
     <p><%= @hackathon.description %></p>
